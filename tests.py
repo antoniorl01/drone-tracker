@@ -20,19 +20,16 @@ def laptop_video_streamer():
     cv2.destroyAllWindows()
 
 
-def test_color_detector(image_path):
+def test_color_detector(frame):
     color = [18, 105, 255] 
-    img = cv2.imread(image_path, cv2.IMREAD_COLOR)
-    mask = logic.color_detector(frame=img, color=color)
+    mask = logic.color_detector(frame=frame, color=color)
     return mask
     
 
-def test_draw_rectangle(image_path):
-    color = [0, 0, 0] 
-    img = image_path
-    #img = cv2.imread(image_path, cv2.IMREAD_COLOR)
-    mask = logic.color_detector(frame=img, color=color)
-    frame = logic.draw_rectangle(frame=img, mask=mask)
+def test_draw_rectangle(frame):
+    color = [18, 105, 255] 
+    mask = logic.color_detector(frame=frame, color=color)
+    frame = logic.draw_rectangle(frame=frame, mask=mask)
     return frame
 
 
